@@ -1,0 +1,8 @@
+<!-- 标准语法 -->
+{{each users}} 
+  {{ $value.name }},{{ $value.sex }},{{ $value.age }}
+{{/each}}
+<!-- 原始语法 -->
+<% for(var i=0;i < users.length;i++){ %>
+  <%= users[i].name %>,<%= users[i].sex %>,<%= users[i].age %>
+<% } %>

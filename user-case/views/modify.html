@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>修改用户信息</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h3>修改用户信息</h3>
+      <form method="post" action="/modify?id={{@userInfo._id }}">
+        <div class="form-group">
+          <label>用户名</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="请填写用户名"
+            name="name"
+            value="{{ userInfo.name }}"
+          />
+        </div>
+        <div class="form-group">
+          <label>密码</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="请输入密码"
+            name="password"
+            value="{{ userInfo.password }}"
+          />
+        </div>
+        <div class="form-group">
+          <label>年龄</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="请填写年龄"
+            name="age"
+            value="{{ userInfo.age }}"
+          />
+        </div>
+        <div class="form-group">
+          <label>邮箱</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="请填写邮箱"
+            name="email"
+            value="{{ userInfo.email }}"
+          />
+        </div>
+        <div class="form-group">
+          <label>请选择爱好</label>
+          <div>
+            <% let
+            allHobbies=['足球','篮球','橄榄球','敲代码','抽烟','喝酒','烫头'] %>
+            <% allHobbies.forEach(item=>{ %> <% let
+            isHobby=userInfo.hobbies.includes(item) %> <% if(isHobby){ %>
+            <label class="checkbox-inline">
+              <input
+                type="checkbox"
+                value="<%= item %>"
+                name="hobbies"
+                checked
+              /><%= item %>
+            </label>
+            <% }else{ %>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="<%= item %>" name="hobbies" /><%=
+              item %>
+            </label>
+            <% } %> <% }) %>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">确认修改</button>
+      </form>
+    </div>
+  </body>
+</html>

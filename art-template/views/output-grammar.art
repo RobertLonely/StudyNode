@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 标准语法 -->
+    {{ data.title }}
+    <!-- 原文输出写法，"@"符号后加数据 -->
+    {{@ data.title }}
+    <p>我叫{{ data.name }},今年{{ data.age }}岁</p>
+    <p>{{ 1 + 1 }}</p>
+    <p>{{ 1 + 1 === 2 ? "相等" : "不相等" }}</p>
+
+    <!-- 原始语法 -->
+    <%= data.title %>
+    <!-- 原文输出写法，"-"符号后加数据 -->
+    <%- data.title %>
+    <p>我叫<%= data.name%>,今年<%= data.age %>岁</p>
+    <p><%= 1 + 1 %></p>
+    <p><%= 1 + 1 === 2 ? "相等" : "不相等" %></p>
+  </body>
+</html>

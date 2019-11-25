@@ -1,0 +1,5 @@
+<!-- 引入HTML骨架模板 -->
+{{extend './common/layout.art'}}
+<!-- 填充预留模块 -->
+{{block 'style'}}<link rel="style" href="main.css">{{/block}}
+{{block 'content'}}<p>{{message}}</p>{{/block}} 
